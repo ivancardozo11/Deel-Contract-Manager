@@ -1,0 +1,67 @@
+# Deel contract Manager v1.0.0
+
+<div style="max-width: 600px; margin: 0 auto;">
+ <p align="center"> 
+ <img src="cm.png" width="500" height="400" alt="Image">
+</p>
+</div>
+
+
+# Project Description:
+
+Welcome to Deel contract manager, this API is developed in Node.js and Express.js, is a robust solution for efficient contract management. It utilizes Sequelize over SQLite for optimized database operations, ensuring secure transactions and effective concurrency handling with asynchronous programming. It features RESTful APIs, secure authentication, and a scalable architecture that ensures high performance and data consistency in high-demand environments. This tool is ideal for settings that require precise and secure handling of transactions and contracts.
+
+
+# Installation instructions:
+
+## Check at the code documentation here to see the whole setup:
+
+<p>
+  <a href="" target="_blank">
+   Link to code documentation
+  </a>
+</p>
+
+## To install all packages in this project.
+```sh
+npm install
+```
+
+## To run development server🔓🔓🔓🛠🛠
+
+### First run:
+
+```sh
+npm run dev
+```
+## To run production 👩‍🚀👩‍🚀👩‍🚀🚀:
+
+```sh
+npm run start
+```
+
+## To seed the database 🌱🌱:
+
+```sh
+npm run seed
+```
+
+## To run test 📕📖🔍🔐:
+
+```sh
+npm run test
+```
+
+This is because its necesary for docker to emulate your database address as if its not local.
+
+## To build the docker image:  
+
+```sh
+docker build --no-cache -t name-of-image .
+```
+
+## To build the container:
+```sh
+docker run  -p 8080 -d name-of-image
+```
+This will expose the port from our localserver
