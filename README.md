@@ -17,7 +17,7 @@ Welcome to Deel contract manager, this API is developed in Node.js and Express.j
 ## Check at the code documentation here to see the whole setup:
 
 <p>
-  <a href="" target="_blank">
+  <a href="https://docs.google.com/document/d/1P5Jr75Lh9GwUGBcNXzLMkd4PS7kgKRSO8R62q6oxZaE/edit?usp=sharing" target="_blank">
    Link to code documentation
   </a>
 </p>
@@ -51,8 +51,6 @@ npm run seed
 ```sh
 npm run test
 ```
-
-This is because its necesary for docker to emulate your database address as if its not local.
 
 ## To build the docker image:  
 
