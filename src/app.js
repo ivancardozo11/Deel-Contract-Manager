@@ -1,21 +1,23 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const {sequelize} = require('./model')
-const {getProfile} = require('./middleware/getProfile')
-const app = express();
-app.use(bodyParser.json());
-app.set('sequelize', sequelize)
-app.set('models', sequelize.models)
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import dotenv from 'dotenv';
+import routes from './routes/v1/index.js';
 
-/**
- * FIX ME!
- * @returns contract by id
- */
-app.get('/contracts/:id',getProfile ,async (req, res) =>{
-    const {Contract} = req.app.get('models')
-    const {id} = req.params
-    const contract = await Contract.findOne({where: {id}})
-    if(!contract) return res.status(404).end()
-    res.json(contract)
-})
-module.exports = app;
+const app = express();
+dotenv.config();
+
+app.use(cors());
+app.use(helmet());
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+
+app.use('/api/v1', routes);
+
+app.use((req, res) => {
+    res.status(404).send('This route doenst exist');
+});
+
+export default app;

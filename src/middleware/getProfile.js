@@ -1,9 +1,23 @@
+import { Profile } from '../models/Profile.js';
 
 const getProfile = async (req, res, next) => {
-    const {Profile} = req.app.get('models')
-    const profile = await Profile.findOne({where: {id: req.get('profile_id') || 0}})
-    if(!profile) return res.status(401).end()
-    req.profile = profile
-    next()
-}
-module.exports = {getProfile}
+    try {
+        const profileId = req.get('profile_id') || 0;
+        if (!profileId) {
+            return res.status(400).json({ error: 'No profile ID provided' });
+        }
+
+        const profile = await Profile.findOne({ where: { id: profileId } });
+        if (!profile) {
+            return res.status(404).json({ error: 'Profile not found' });
+        }
+
+        req.profile = profile;
+        next();
+    } catch (error) {
+        console.error('Error in getProfile middleware:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+export { getProfile };
