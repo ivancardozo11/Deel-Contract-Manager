@@ -22,28 +22,34 @@ Welcome to Deel contract manager, this API is developed in Node.js and Express.j
   </a>
 </p>
 
-## To install all packages in this project.
+## Step 1:
+
+## Install all packages through npm.
 ```sh
 npm install
 ```
 
-## To run development server🔓🔓🔓🛠🛠
+## Step 2:
 
-### First run:
+## Seed the database 🌱🌱:
+
+```sh
+npm run seed
+```
+
+## Step 3:
+
+## Run the desired service:
+
+### To run development server🔓🛠:
 
 ```sh
 npm run dev
 ```
-## To run production 👩‍🚀👩‍🚀👩‍🚀🚀:
+### To run production ready code 👩‍🚀👩‍🚀👩‍🚀🚀:
 
 ```sh
 npm run start
-```
-
-## To seed the database 🌱🌱:
-
-```sh
-npm run seed
 ```
 
 ## To run test 📕📖🔍🔐:
@@ -52,13 +58,15 @@ npm run seed
 npm run test
 ```
 
-## To build the docker image:  
+## To use it Docker🐳:
+
+### To build the docker image:  
 
 ```sh
 docker build --no-cache -t name-of-image .
 ```
 
-## To build the container:
+### To build the container:
 ```sh
 docker run  -p 8080 -d name-of-image
 ```

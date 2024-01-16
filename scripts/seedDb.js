@@ -1,11 +1,15 @@
-import { Profile, Contract, Job } from '../src/models/model.js';
+import { sequelize } from '../src/database/index.js';
+import Profile from '../src/models/Profile.js';
+import Contract from '../src/models/Contract.js';
+import Job from '../src/models/Job.js';
 
 (async () => {
     try {
-        // WARNING: Esto eliminará la base de datos actual
+        // WARNING: This will eliminate the actual database
         await Profile.sync({ force: true });
         await Contract.sync({ force: true });
         await Job.sync({ force: true });
+        await sequelize.sync({ force: true });
 
         await Promise.all([
             Profile.create({
@@ -225,7 +229,7 @@ import { Profile, Contract, Job } from '../src/models/model.js';
             })
         ]);
 
-        console.log('Database succesfully populated');
+        console.log('Database succesfully populated ✅✅');
     } catch (error) {
         console.error('Error populating the database:', error);
     }
