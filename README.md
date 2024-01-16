@@ -17,7 +17,7 @@ Welcome to Deel contract manager, this API is developed in Node.js and Express.j
 ## Check at the code documentation here to see the whole setup:
 
 <p>
-  <a href="https://docs.google.com/document/d/1P5Jr75Lh9GwUGBcNXzLMkd4PS7kgKRSO8R62q6oxZaE/edit?usp=sharing" target="_blank">
+  <a href="https://docs.google.com/document/d/1P5Jr75Lh9GwUGBcNXzLMkd4PS7kgKRSO8R62q6oxZaE" target="_blank">
    Link to code documentation
   </a>
 </p>
@@ -39,7 +39,7 @@ npm run seed
 
 ## Step 3:
 
-## Run the desired service:
+## Run the desired server:
 
 ### To run development server🔓🛠:
 
@@ -58,7 +58,7 @@ npm run start
 npm run test
 ```
 
-## To use it Docker🐳:
+## To use the app with Docker🐳:
 
 ### To build the docker image:  
 
