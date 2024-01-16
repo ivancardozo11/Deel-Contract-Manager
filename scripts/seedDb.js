@@ -6,10 +6,12 @@ import Job from '../src/models/Job.js';
 (async () => {
     try {
         // WARNING: This will eliminate the actual database
+        await sequelize.query('PRAGMA foreign_keys = OFF;');
         await Profile.sync({ force: true });
         await Contract.sync({ force: true });
         await Job.sync({ force: true });
         await sequelize.sync({ force: true });
+        await sequelize.query('PRAGMA foreign_keys = ON;');
 
         await Promise.all([
             Profile.create({
