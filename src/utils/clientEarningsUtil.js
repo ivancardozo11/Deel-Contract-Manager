@@ -17,7 +17,7 @@ export const calculateClientPayments = (jobs, contracts, clients) => {
     return clientPayments;
 };
 
-export const sortAndLimitClients = (clientPayments, limit) => {
+export const sortAndLimitClients = (clientPayments, limit = 2) => {
     return Object.values(clientPayments)
         .sort((a, b) => b.paid - a.paid)
         .slice(0, limit);
