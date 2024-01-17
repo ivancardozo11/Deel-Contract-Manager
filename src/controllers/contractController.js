@@ -1,4 +1,4 @@
-import { findContractByIdAndProfile } from '../services/contractService.js';
+import { findContractByIdAndProfile, getAllActiveContracts } from '../services/contractService.js';
 
 const getContractById = async (req, res) => {
     try {
@@ -18,4 +18,14 @@ const getContractById = async (req, res) => {
     }
 };
 
-export { getContractById };
+const getActiveContracts = async (req, res) => {
+    try {
+        const contracts = await getAllActiveContracts();
+        return res.json(contracts);
+    } catch (error) {
+        console.error('Error in getActiveContracts:', error);
+        return res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+export { getContractById, getActiveContracts };

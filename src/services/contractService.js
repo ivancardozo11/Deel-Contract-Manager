@@ -13,4 +13,16 @@ const findContractByIdAndProfile = async (contractId, profileId) => {
     });
 };
 
-export { findContractByIdAndProfile };
+const getAllActiveContracts = async () => {
+    const contracts = await Contract.findAll({
+        where: {
+            status: {
+                [Op.ne]: 'terminated'
+            }
+        }
+    });
+
+    return contracts;
+};
+
+export { findContractByIdAndProfile, getAllActiveContracts };
