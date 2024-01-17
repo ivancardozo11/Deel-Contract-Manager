@@ -38,6 +38,3 @@ jobs:
 
     - name: Security Audit
       run: npm audit --production --audit-level=high
-
-    - name: Build Docker Image
-      run: docker build -t ivanncardozo/contract-manager:${{ github.sha }} .
