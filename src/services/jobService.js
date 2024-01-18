@@ -1,4 +1,4 @@
-import { Job } from '../models/Job.js'; // Asegúrate de importar de cada archivo de modelo específico
+import { Job } from '../models/Job.js';
 import { Contract } from '../models/Contract.js';
 import { Op } from 'sequelize';
 import { sequelize } from '../database/index.js';
